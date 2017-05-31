@@ -9,13 +9,11 @@
 - demo代码
 
 ### 1. 说明
-    
-    该主页主要介绍机器鱼视觉部分，方便大家进行二次开发<br>
+- 该主页主要介绍机器鱼视觉部分，方便大家进行二次开发<br>
 
 ### 2. 平台
-
-    硬件使用Nanopi-S2，软件使用opencv2.10<br>
-    处理流程为：Nanopi-S2处理视觉数据后，发送给STM32进行鱼尾的控制，从而实现自主避障<br>
-    这里附上Nanopi-S2的wiki链接[Nanopi-S2](http://wiki.friendlyarm.com/wiki/index.php/NanoPi_S2/zh)
+- 硬件使用Nanopi-S2，软件使用opencv2.10<br>
+- 处理流程为：Nanopi-S2处理视觉数据后，发送给STM32进行鱼尾的控制，从而实现自主避障<br>
+- 这里附上Nanopi-S2的wiki链接[Nanopi-S2](http://wiki.friendlyarm.com/wiki/index.php/NanoPi_S2/zh)
 
 ### 3.demo代码
