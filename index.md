@@ -12,6 +12,7 @@
 该主页主要介绍机器鱼视觉部分，方便大家进行二次开发
 
 ### 2. 平台
-视觉部分基于Nanopi-S2的`Debian`平台，软件部分使用`opencv2.10`开发。Nanopi-S2处理摄像头数据后，发送给STM32，从而实现自主避障
+硬件使用`Nanopi-S2`，软件使用`opencv2.10`。处理流程为：Nanopi-S2处理视觉数据后，发送给STM32进行鱼尾的控制，从而实现自主避障
+[wiki](http://wiki.friendlyarm.com/wiki/index.php/NanoPi_S2/zh)
 
 ### 3.demo代码
