@@ -19,8 +19,7 @@
 ### 3. 库函数说明
 - 在视觉部分，已经提供一些可以直接使用的函数接口，这里说明一下如何使用这些函数接口
 
-```
-void uart_init(int *g_fd);
+1. `void uart_init(int *g_fd);`
 void send_pos_data(int *g_fd,unsigned char *s);
 int  receive_stm_data(int *g_fd,unsigned char *s);
 void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);
@@ -36,4 +35,4 @@ void server_socketDisconnect(int sockServer);
 int  server_transmit(int sockServer,Mat image);
 int  server_transmit(int sockServer,unsigned char* temp);
 void pc_data_convert(unsigned char *temp);
-```
+
