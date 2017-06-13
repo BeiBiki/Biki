@@ -20,19 +20,20 @@
 - 在视觉部分，已经提供一些可以直接使用的函数接口，这里说明一下如何使用这些函数接口
 
 1. `void uart_init(int *g_fd);`
-void send_pos_data(int *g_fd,unsigned char *s);
-int  receive_stm_data(int *g_fd,unsigned char *s);
-void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);
+2. `void send_pos_data(int *g_fd,unsigned char *s);`
+3. `int  receive_stm_data(int *g_fd,unsigned char *s);`
+4. `void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);`
 
-void img_rotate(Mat src_img,Mat* rotate_img);
-void img_hsv(Mat src_img,Mat* hsv_img);
-void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);
-void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);
-void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);
+5. `void img_rotate(Mat src_img,Mat* rotate_img);`
+6. `void img_hsv(Mat src_img,Mat* hsv_img);`
+7. `void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);`
+8. `void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);`
+9. `void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);`
 
-int  server_socketConnect(int *sockServer,int PORT);
-void server_socketDisconnect(int sockServer);
-int  server_transmit(int sockServer,Mat image);
-int  server_transmit(int sockServer,unsigned char* temp);
-void pc_data_convert(unsigned char *temp);
+10. `int  server_socketConnect(int *sockServer,int PORT);`
+11. `void server_socketDisconnect(int sockServer);`
+12. `int  server_transmit(int sockServer,Mat image);`
+13. `int  server_transmit(int sockServer,unsigned char* temp);`
+14. `void pc_data_convert(unsigned char *temp);`
+
 
