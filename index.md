@@ -21,9 +21,9 @@
 
 1. `void uart_init(int *g_fd);`<br>
 
-  - 功能：初始化NanoPi串口<br>
-  - 入参：g_fd串口标识符，是一个指针<br>
-  - 返回：无返回值<br>
+    功能：初始化NanoPi串口<br>
+    入参：g_fd串口标识符，是一个指针<br>
+    返回：无返回值<br>
   
 2. `void send_pos_data(int *g_fd,unsigned char *s);`
 3. `int  receive_stm_data(int *g_fd,unsigned char *s);`
