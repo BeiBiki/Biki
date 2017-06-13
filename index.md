@@ -21,11 +21,15 @@
 
 1. `void uart_init(int *g_fd);`<br>
 
-    - 功能：初始化NanoPi串口<br>
+    - 功能：初始化NanoPi串口,以便发送图像信息至STM32单片机<br>
     - 入参：g_fd串口标识符，是一个指针<br>
     - 返回：无返回值<br>
   
 2. `void send_pos_data(int *g_fd,unsigned char *s);`
+    
+    - 功能：向单片机串口发送障碍物位置信息
+    - 入参：位置信息，是一个数组，
+    - 返回：无返回值
 3. `int  receive_stm_data(int *g_fd,unsigned char *s);`
 4. `void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);`
 
