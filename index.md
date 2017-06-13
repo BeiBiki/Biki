@@ -17,4 +17,23 @@
 - 这里附上Nanopi-S2的wiki链接[Nanopi-S2](http://wiki.friendlyarm.com/wiki/index.php/NanoPi_S2/zh)方便大家查找问题
 
 ### 3. 库函数说明
-- 在视觉部分，已经提供一些可以直接使用的接口，这里说明一下如何使用
+- 在视觉部分，已经提供一些可以直接使用的函数接口，这里说明一下如何使用这些函数接口
+
+```
+void uart_init(int *g_fd);
+void send_pos_data(int *g_fd,unsigned char *s);
+int  receive_stm_data(int *g_fd,unsigned char *s);
+void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);
+
+void img_rotate(Mat src_img,Mat* rotate_img);
+void img_hsv(Mat src_img,Mat* hsv_img);
+void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);
+void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);
+void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);
+
+int  server_socketConnect(int *sockServer,int PORT);
+void server_socketDisconnect(int sockServer);
+int  server_transmit(int sockServer,Mat image);
+int  server_transmit(int sockServer,unsigned char* temp);
+void pc_data_convert(unsigned char *temp);
+```
