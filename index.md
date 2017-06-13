@@ -20,9 +20,11 @@
 - 在视觉部分，已经提供一些可以直接使用的函数接口，这里说明一下如何使用这些函数接口
 
 1. `void uart_init(int *g_fd);`<br>
+
   - 功能：初始化NanoPi串口<br>
   - 入参：g_fd串口标识符，是一个指针<br>
   - 返回：无返回值<br>
+  
 2. `void send_pos_data(int *g_fd,unsigned char *s);`
 3. `int  receive_stm_data(int *g_fd,unsigned char *s);`
 4. `void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);`
