@@ -43,8 +43,8 @@
 
   > 功能：NanoPi拍照存储照片<br>
   > src_img：串口标识符，是一个指针<br>
-  > cnt：连拍的次数
-  > name_cnt：照片命名的起始数字
+  > cnt：连拍的次数<br>
+  > name_cnt：照片命名的起始数字<br>
   > 返回：无返回值<br>
   
 5. `void img_rotate(Mat src_img,Mat* rotate_img);`
