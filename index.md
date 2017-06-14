@@ -87,10 +87,31 @@
   返回：无返回值
   
 10. int  server_socketConnect(int *sockServer,int PORT);
-11. void server_socketDisconnect(int sockServer);
-12. int  server_transmit(int sockServer,Mat image);
-13. int  server_transmit(int sockServer,unsigned char* temp);
-14. void pc_data_convert(unsigned char *temp);
 
+  功能：与client建立连接，即与PC客服端远程连接
+  *sockServer：socket标识符
+  PORT：端口号
+  返回：连接失败则返回0
+  
+11. void server_socketDisconnect(int sockServer);
+
+  功能：断开服务器连接
+  *sockServer：socket标识符
+  PORT：端口号
+  返回：无返回值
+  
+12. int  server_transmit(int sockServer,Mat image);
+ 
+  功能：服务端向client发送图像
+  *sockServer：socket标识符
+  image：要发送的图像
+  返回：
+  
+13. int  server_transmit(int sockServer,unsigned char* temp);
+
+  功能：服务端向client发送用户数据
+  *sockServer：socket标识符
+  *temp：要发送的数据，12个字节
+  返回：
 
 ```
