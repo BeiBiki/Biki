@@ -21,7 +21,7 @@
 
 ```c++
 
-1. `void uart_init(int *g_fd);`<br>
+1. void uart_init(int *g_fd);
 
   功能：初始化NanoPi串口,以便发送图像信息至STM32单片机
   *g_fd：串口标识符，是一个指针
