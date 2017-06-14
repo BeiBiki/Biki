@@ -80,10 +80,10 @@
   
 9. void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);
 
-  功能：将矩形的信息,(center_x,center_x,area%,),转换到串口数据缓冲区
+  功能：将矩形的信息,(center_x,center_x,area%,width),转换到串口数据发送缓冲区
   rect：障碍物外接矩形
   id：根据协议，指定的颜色ID
-  *tx_buf：串口数据缓冲区
+  *tx_buf：串口数据发送缓冲区
   返回：无返回值
   
 10. int  server_socketConnect(int *sockServer,int PORT);
