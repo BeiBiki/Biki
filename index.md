@@ -19,41 +19,39 @@
 ### 3. 库函数说明
 - 在视觉部分，这里提供一些可以直接使用的函数接口，函数说明如下
 
+```c++
+
 1. `void uart_init(int *g_fd);`<br>
 
-  ```
   功能：初始化NanoPi串口,以便发送图像信息至STM32单片机
   *g_fd：串口标识符，是一个指针
   返回：无返回值
-  ```
+
   
 2. `void send_pos_data(int *g_fd,unsigned char *s);`<br>
 
-  ```
+
   功能：向单片机串口发送障碍物位置信息
   *g_fd：串口标识符，是一个指针
   *s：障碍物位置信息，根据通信协议，带入数组时一共是17个字节，请务必按照协议来写!
   返回：无返回值
-  ```
   
 3. `int  receive_stm_data(int *g_fd,unsigned char *s);`<br>
 
-  ```
   功能：NanoPi接收由STM32发送过来的数据
   *g_fd：串口标识符，是一个指针
   *s：STM32发送过来的数据，根据通信协议，该数据为5个字节(处理图像或拍照命令)，或15个字节(用户6个16位数据)
   返回：无返回值
-  ```
   
 4. `void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);`<br>
 
-  ```
+
   功能：NanoPi拍照存储照片
   src_img：串口标识符，是一个指针
   cnt：连拍的次数
   name_cnt：照片命名的起始数字
   返回：无返回值
-  ```
+
   
 5. `void img_rotate(Mat src_img,Mat* rotate_img);`<br>
 
@@ -69,3 +67,4 @@
 14. `void pc_data_convert(unsigned char *temp);`<br>
 
 
+```
