@@ -26,25 +26,22 @@
   功能：初始化NanoPi串口,以便发送图像信息至STM32单片机
   *g_fd：串口标识符，是一个指针
   返回：无返回值
-
   
-2. `void send_pos_data(int *g_fd,unsigned char *s);`<br>
-
+2. void send_pos_data(int *g_fd,unsigned char *s);
 
   功能：向单片机串口发送障碍物位置信息
   *g_fd：串口标识符，是一个指针
   *s：障碍物位置信息，根据通信协议，带入数组时一共是17个字节，请务必按照协议来写!
   返回：无返回值
   
-3. `int  receive_stm_data(int *g_fd,unsigned char *s);`<br>
+3. int  receive_stm_data(int *g_fd,unsigned char *s);
 
   功能：NanoPi接收由STM32发送过来的数据
   *g_fd：串口标识符，是一个指针
   *s：STM32发送过来的数据，根据通信协议，该数据为5个字节(处理图像或拍照命令)，或15个字节(用户6个16位数据)
   返回：无返回值
   
-4. `void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);`<br>
-
+4. void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);
 
   功能：NanoPi拍照存储照片
   src_img：串口标识符，是一个指针
@@ -52,19 +49,18 @@
   name_cnt：照片命名的起始数字
   返回：无返回值
 
-  
-5. `void img_rotate(Mat src_img,Mat* rotate_img);`<br>
+5. void img_rotate(Mat src_img,Mat* rotate_img);
 
-6. `void img_hsv(Mat src_img,Mat* hsv_img);`<br>
-7. `void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);`<br>
-8. `void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);`<br>
-9. `void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);`<br>
+6. void img_hsv(Mat src_img,Mat* hsv_img);
+7. void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);
+8. void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);
+9. void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);
 
-10. `int  server_socketConnect(int *sockServer,int PORT);`<br>
-11. `void server_socketDisconnect(int sockServer);`<br>
-12. `int  server_transmit(int sockServer,Mat image);`<br>
-13. `int  server_transmit(int sockServer,unsigned char* temp);`<br>
-14. `void pc_data_convert(unsigned char *temp);`<br>
+10. int  server_socketConnect(int *sockServer,int PORT);
+11. void server_socketDisconnect(int sockServer);
+12. int  server_transmit(int sockServer,Mat image);
+13. int  server_transmit(int sockServer,unsigned char* temp);
+14. void pc_data_convert(unsigned char *temp);
 
 
 ```
