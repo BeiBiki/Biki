@@ -38,7 +38,7 @@
 
   功能：NanoPi接收由STM32发送过来的数据
   *g_fd：串口标识符，是一个指针
-  *s：STM32发送过来的数据，根据通信协议，该数据为5个字节(处理图像或拍照命令)，或15个字节(用户6个16位数据)
+  *s：STM32发送过来的数据，根据通信协议，该数据为5个字节(处理图命令或拍照命令)，或15个字节(用户6个16位数据)
   返回：无返回值
   
 4. void take_photos(Mat src_img,unsigned char cnt,unsigned char name_cnt);
@@ -50,12 +50,42 @@
   返回：无返回值
 
 5. void img_rotate(Mat src_img,Mat* rotate_img);
+  
+  功能：旋转图像，摄像头是横向安装的,这里要旋转一下
+  src_img：源图像
+  *rotate_img：生成的旋转后的图像
+  返回：无返回值
 
 6. void img_hsv(Mat src_img,Mat* hsv_img);
+  
+  功能：图像滤波并将源图像由RGB空间转换为HSV空间
+  src_img：源图像
+  *hsv_img：生成的HSV空间图像
+  返回：无返回值
+  
 7. void img_process(Mat hsv_img,int* hsv_value,Mat* color_img);
+
+  功能：图像过滤，过滤出需要的颜色，即特定颜色的障碍物
+  hsv_img：HSV空间图像
+  *hsv_value：HSV范围值，{Hmin,Hmax,Smin,Smax,Vmin,Vmax}，一共6个字节
+  *color_img：生成的单一颜色图像
+  返回：无返回值
+  
 8. void get_contours(Mat src_img,Mat* img_contours,RotatedRect *rect);
+
+  功能：获取图像的轮廓，即障碍物的轮廓
+  *img_contours：图像的轮廓
+  *rect：轮廓外接的矩形，由矩形的坐标即可表示即障碍物在视觉中的坐标
+  返回：无返回值
+  
 9. void pos_data_convert(RotatedRect rect,unsigned char color_id,unsigned char* tx_buf);
 
+  功能：将矩形的信息,(center_x,center_x,area%,),转换到串口数据缓冲区
+  rect：障碍物外接矩形
+  id：根据协议，指定的颜色ID
+  *tx_buf：串口数据缓冲区
+  返回：无返回值
+  
 10. int  server_socketConnect(int *sockServer,int PORT);
 11. void server_socketDisconnect(int sockServer);
 12. int  server_transmit(int sockServer,Mat image);
